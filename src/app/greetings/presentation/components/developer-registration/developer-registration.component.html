@@ -1,1 +1,32 @@
-<p>developer-registration works!</p>
+<h1>New Developer</h1>
+
+<form (ngSubmit)="submitRegistrationRequest()">
+  <label for="first-name">First Name:</label>
+  <input
+    id="first-name"
+    type="text"
+    [value]="firstName()"
+    (input)="firstName.set($any($event.target).value)"
+  >
+  @if (firstName().trim().length > 0 && firstName().trim().length < 2) {
+    <div class="error">First name must be at least 2 characters.</div>
+  }
+
+  <label for="last-name">Last Name:</label>
+  <input
+    id="last-name"
+    type="text"
+    [value]="lastName()"
+    (input)="lastName.set($any($event.target).value)"
+  >
+  @if (lastName().trim().length > 0 && lastName().trim().length < 2) {
+    <div class="error">Last name must be at least 2 characters.</div>
+  }
+
+  <div>
+    <button type="submit" [disabled]="!isFormValid()">Register</button>
+    <button type="button" (click)="deferRegistration()">Later</button>
+    <button type="button" (click)="clearFields()">Clear</button>
+  </div>
+</form>
+
