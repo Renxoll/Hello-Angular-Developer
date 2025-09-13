@@ -1,6 +1,9 @@
 {
   "name": "hello-angular-developer",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "A simple angular application to greet developers",
+  "author": "Open-Source Applcations Developer Team",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
